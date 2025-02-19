@@ -15,10 +15,8 @@ def retrieve_entries(session: Session):
     return db_entries
 
 
-def retrieve_entry(session: Session, entry: schema.DeleteEntry):
-    db_entry = (
-        session.query(model.Entry).filter(model.Entry.entryId == entry.entryId).first()
-    )
+def retrieve_entry(session: Session, entryId: str):
+    db_entry = session.query(model.Entry).filter(model.Entry.entryId == entryId).first()
     return db_entry
 
 

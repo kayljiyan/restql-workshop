@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from app.api.endpoints.task import graphql_app
 from app.api.router import v1_router
 from app.db.base import Base
 from app.db.session import engine
@@ -17,6 +18,7 @@ async def lifespan(fastapp: FastAPI):
 fastapp = FastAPI(lifespan=lifespan)
 
 fastapp.include_router(v1_router, prefix="/api/v1")
+fastapp.include_router(graphql_app, prefix="/graphql")
 
 
 @fastapp.get("/")
