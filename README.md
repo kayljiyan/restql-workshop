@@ -11,7 +11,7 @@
 
 ### Installing
 
-- Fork this repository
+- Fork this repository (Uncheck the "Copy the main branch only" option)
 - Clone the forked repository in your local machine
 - Create a virtualenv
 
