@@ -8,6 +8,13 @@ class StoreEntry(BaseModel):
     entryDetails: str
 
 
-class Entry(StoreEntry):
+class UpdateEntry(StoreEntry):
     entryId: UUID
+
+
+class DeleteEntry(BaseModel):
+    entryId: UUID
+
+
+class Entry(UpdateEntry):
     createdAt: datetime
